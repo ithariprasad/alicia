@@ -1,4 +1,4 @@
-package com.virtusa.chat.service.impl;
+package com.virtusa.chat.service;
 
 import org.json.JSONException;
 
