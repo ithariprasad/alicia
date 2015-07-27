@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!--  APPENDER DEFINITIONS -->
+
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{dd MMM yyyy HH:mm:ss.SSS}] %-5p - %c - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="systemFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${catalina.base}/logs/system.log"/>
+        <param name="maxFileSize" value="5MB"/>
+        <param name="maxBackupIndex" value="10"/>
+        <param name="append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{dd MMM yyyy HH:mm:ss.SSS}] [%t] %-5p - %c - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="traceFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${catalina.base}/logs/trace.log"/>
+        <param name="maxFileSize" value="5MB"/>
+        <param name="maxBackupIndex" value="10"/>
+        <param name="append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{dd MMM yyyy HH:mm:ss.SSS}] [%t] %-5p - %c - %m%n"/>
+        </layout>
+    </appender>
+
+
+    <!-- LOGGER DEFINITIONS -->
+    <!-- Logger possible level values OFF, DEBUG, WARN, ERROR, FATAL, ALL -->
+    <!-- additivity="false" do not append to parents loggers -->
+
+
+    <logger name="org.apache">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="com.virtusa.alicia">
+        <level value="ALL"/>
+    </logger>
+
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="systemFile"/>
+        <appender-ref ref="Console"/>
+        <appender-ref ref="traceFile"/>
+    </root>
+
+</log4j:configuration>

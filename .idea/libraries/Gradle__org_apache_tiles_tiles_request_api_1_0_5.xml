@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tiles:tiles-request-api:1.0.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-request-api/1.0.5/f7f8b465709a4733851587c5641d2ee8503a8a6a/tiles-request-api-1.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tiles/tiles-request-api/1.0.5/e4136c065554242c4d5c13d68396e60f522cbbce/tiles-request-api-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

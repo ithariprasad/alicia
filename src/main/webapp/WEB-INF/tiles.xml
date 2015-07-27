@@ -1,0 +1,167 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Base layout with header, footer, navigation -->
+    <!--*********************************************-->
+
+    <definition name="baseLayout" template="/WEB-INF/view/layout/layout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="javascript" value="jquery/jquery-1.11.2.min.js,jquery/jquery-ui.min.js,bootstrap/bootstrap.min.js,metis/metisMenu.min.js,layout/sb-admin-2.js,chat/bot.js"/>
+        <put-attribute name="stylesheet" value="bootstrap/bootstrap.min.css,bootstrap/bootstrap-theme.min.css,layout/layout.css"/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="timeout" value=""/>
+        <put-attribute name="header" value="/WEB-INF/view/layout/header.jsp"/>
+        <put-attribute name="navigation" value="/WEB-INF/view/layout/navigation.jsp"/>
+        <put-attribute name="body" value=""/><!-- body will be set by the page that extends this layout -->
+        <put-attribute name="bodyonload" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/view/layout/footer.jsp"/>
+    </definition>
+
+
+    <!-- Single  Page layout with header, footer, navigation -->
+    <!--*********************************************-->
+
+    <definition name="singlePageLayout" template="/WEB-INF/view/layout/singleLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="javascript" value="jquery/jquery-1.11.2.min.js,jquery/jquery-ui.min.js,bootstrap/bootstrap.min.js"/>
+        <put-attribute name="stylesheet" value="bootstrap/bootstrap.min.css,bootstrap/bootstrap-theme.min.css,layout/layout.css"/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="timeout" value=""/>
+        <put-attribute name="header" value="/WEB-INF/view/layout/simpleHeader.jsp"/>
+        <put-attribute name="body" value=""/><!-- body will be set by the page that extends this layout -->
+        <put-attribute name="bodyonload" value="startSessionTimer();"/>
+        <put-attribute name="footer" value="/WEB-INF/view/layout/simpleFooter.jsp"/>
+    </definition>
+
+
+    <definition name="loginLayout" template="/WEB-INF/view/layout/loginLayout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="javascript" value="jquery/jquery-1.11.2.min.js,jquery/jquery-ui.min.js,bootstrap/bootstrap.min.js"/>
+        <put-attribute name="stylesheet" value="bootstrap/bootstrap.min.css,bootstrap/bootstrap-theme.min.css,layout/layout.css"/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="timeout" value=""/>
+        <put-attribute name="body" value=""/><!-- body will be set by the page that extends this layout -->
+        <put-attribute name="bodyonload" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/view/layout/simpleFooter.jsp"/>
+    </definition>
+
+    <!-- Layout used for base layout pages go here -->
+    <!--************************************************-->
+
+    <definition name="main" extends="baseLayout">
+        <put-attribute name="title" value="Broadband, TV, phone, home and business!"/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/marketing/market.jsp"/>
+    </definition>
+
+    <!-- Layout used for main layout pages end here -->
+
+    <!-- Layout used for single pages go here -->
+    <!--************************************************-->
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Login"/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/login.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+   
+    <!-- Layout used for single pages responses end here -->
+
+    <!-- Layout used for AJAX responses go here -->
+    <!--****************************************-->
+
+    <!-- Layout used for AJAX responses end here -->
+
+
+    <!-- Base layout with header, footer, navigation -->
+    <!--*********************************************-->
+
+    <definition name="mainLayout" template="/WEB-INF/view/layout/app/layout.jsp">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="javascript" value="jquery/jquery-1.11.2.min.js,jquery/jquery-ui.min.js,bootstrap/bootstrap.min.js"/>
+        <put-attribute name="stylesheet" value="bootstrap/bootstrap.min.css,bootstrap/bootstrap-theme.min.css,layout/sb-admin-2.css,layout/timeline.css"/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="timeout" value=""/>
+        <put-attribute name="header" value="/WEB-INF/view/layout/header.jsp"/>
+        <put-attribute name="navigation" value="/WEB-INF/view/layout/navigation.jsp"/>
+        <put-attribute name="body" value=""/><!-- body will be set by the page that extends this layout -->
+        <put-attribute name="bodyonload" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/view/layout/footer.jsp"/>
+    </definition>
+
+    <!-- Base layout with header, footer, navigation -->
+    <!--*********************************************-->
+
+    <definition name="home" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/home/home.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="fileupload" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/upload/fileupload.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="weeklyreport" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/reports/weeklyreport.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="viewpastreport" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/reports/viewpastreport.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="emptyreport" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/reports/emptyreport.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="viewpastreports" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/reports/viewpastreports.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="manageusers" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/admin/manageusers.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+    <definition name="manageaccounts" extends="mainLayout">
+        <put-attribute name="title" value=""/>
+        <put-attribute name="page-javascript" value=""/>
+        <put-attribute name="page-stylesheet" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/admin/manageaccounts.jsp"/>
+        <put-attribute name="bodyonload" value=""/>
+    </definition>
+
+</tiles-definitions>
